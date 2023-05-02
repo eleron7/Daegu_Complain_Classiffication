@@ -1,17 +1,47 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AIVLE</title>
-    </head>
-    <body>
-        <h1>대구시 민원 부서 분류</h1>
-        <form action="/predict" method="POST">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIVLE</title>
+</head>
+<body>
+    <h1>대구시 민원 부서 분류</h1>
+    <div class="attr-wrap">
+        <label>자치구를 고르세요</label>
+        <select id="subscription">
+            <option value="BukGu" selected>BukGu</option>
+            <option value="DalseongGun">DalseongGun</option>
+            <option value="DalsuGu">DalsuGu</option>
+            <option value="DongGu">DongGu</option>
+            <option value="JungGu">JungGu</option>
+            <option value="NamGu">NamGu</option>
+            <option value="SeoGu">SeoGu</option>
+            <option value="Suseonggu">SuseongGu</option>
+        </select>
+    </div><hr>
+    <form action="/predict" method="POST">
         <label for="sentence">민원을 입력하세요: </label>
         <input type="text" id="sentence" name="sentence"><br><br>
-        <input type="submit" value="Predict">
-        </form>
-    </body>
-    </html>
+        <button type="submit">완료</button>  
+    </form>
+    <script>
+        // 폼 제출 이벤트 리스너 : 완료버튼이 눌리면 클릭 이벤트
+        document.getElementById("prediction-form").addEventListener("submit", function(event){
+            // select 값 추가하기
+            const select = document.getElementById("subscription");
+            const selectedOption = select.options[select.selectedIndex].value;
+            // 새로운 input 엘리먼트 속성을 설정
+            const input = document.createElement("input");
+            // tpye 설정을 히든으로 해서 사용자한테는 안 보이게 해줌
+            input.setAttribute("type", "hidden");
+            // name 속성을 subscription으로 설정 -> 서버에서 해당 값을 받아올 때 사용
+            input.setAttribute("name", "subscription");
+            input.setAttribute("value", selectedOption);
+            // 생성된 input엘리먼트를 id가 prediction-form인 폼에 추가해서 함께 전송
+            document.getElementById("prediction-form").appendChild(input);
+        });
+    </script>
+</body>
+</html>

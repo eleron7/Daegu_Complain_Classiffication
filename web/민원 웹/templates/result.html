@@ -8,7 +8,15 @@
 </head>
 <body>
     <h1>민원 부서 결과</h1>
-    <p>입력하신 민원 내용: {{ text }}</p>
-    <p>예상 부서: {{ category }}</p>
+    <form action="/predict/manager" method="POST">
+        <p><h2>입력하신 민원 내용</h2>{{ text }}</p><hr>
+        <p><h2>예상 부서</h2>{{ category }}</p><hr>
+
+        <input type="hidden" id="text" name="text" value="{{ text }}">
+        <input type="hidden" id="category" name="category" value="{{ category }}">
+        <input type="hidden" id="pred" name="pred" value="{{ pred }}">
+        <button type="submit">Manager 페이지로 넘어가기</button>
+    </form>
+  
 </body>
 </html>

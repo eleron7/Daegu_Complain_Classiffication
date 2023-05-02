@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIVLE</title>
+</head>
+<body>
+    <h1><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIVLE</title>
+</head>
+<body>
+    <h1>관리자 페이지</h1>
+    <select id="subscription">
+        <option value="BukGu" selected>BukGu</option>
+        <option value="DalseongGun">DalseongGun</option>
+        <option value="DalsuGu">DalsuGu</option>
+        <option value="DongGu">DongGu</option>
+        <option value="JungGu">JungGu</option>
+        <option value="NamGu">NamGu</option>
+        <option value="SeoGu">SeoGu</option>
+        <option value="Suseonggu">SuseongGu</option>
+    </select>
+    <div class="manager-wrap table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>민원 내용</th>
+                    <th>예상 부서</th>
+                    <th>예측 확률</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id = "text"></td>
+                    <td id = "category"></td>
+                    <td id = "pred"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // 로컬 스토리지에서 데이터 가져오기
+        const text = localStorage.getItem('text');
+        const category = localStorage.getItem('category');
+        const pred = localStorage.getItem('pred');
+
+        // td에 데이터 넣기
+        document.getElementById('text').textContent = text;
+        document.getElementById('category').textContent = category;
+        document.getElementById('pred').textContent = pred;
+
+        // select 태그에서 구를 선택할 때마다 해당 구_manager.html로 이동
+        document.getElementById('subscription').onchange = function() {
+            const value = this.value;
+            switch (value) {
+                case 'BukGu':
+                    window.location.href = 'BukGu_manager.html';
+                    break;
+                case 'DalseongGun':
+                    window.location.href = 'DalseongGun_manager.html';
+                    break;
+                case 'DalsuGu':
+                    window.location.href = 'DalsuGu_manager.html';
+                    break;
+                case 'DongGu':
+                    window.location.href = 'DongGu_manager.html';
+                    break;
+                case 'JungGu':
+                    window.location.href = 'JungGu_manager.html';
+                    break;
+                case 'NamGu':
+                    window.location.href = 'NamGu_manager.html';
+                    break;
+                case 'SeoGu':
+                    window.location.href = 'SeoGu_manager.html';
+                    break;
+                case 'SuseongGu':
+                    window.location.href = 'SuseongGu_manager.html';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html> 관리자 페이지</h1>
+    <select id="subscription">
+        <option value="BukGu" selected>BukGu</option>
+        <option value="DalseongGun">DalseongGun</option>
+        <option value="DalsuGu">DalsuGu</option>
+        <option value="DongGu">DongGu</option>
+        <option value="JungGu">JungGu</option>
+        <option value="NamGu">NamGu</option>
+        <option value="SeoGu">SeoGu</option>
+        <option value="Suseonggu">SuseongGu</option>
+    </select>
+    <div class="manager-wrap table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>민원 내용</th>
+                    <th>예상 부서</th>
+                    <th>예측 확률</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id = "text"></td>
+                    <td id = "category"></td>
+                    <td id = "pred"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // 로컬 스토리지에서 데이터 가져오기
+        const text = localStorage.getItem('text');
+        const category = localStorage.getItem('category');
+        const pred = localStorage.getItem('pred');
+
+        // td에 데이터 넣기
+        document.getElementById('text').textContent = text;
+        document.getElementById('category').textContent = category;
+        document.getElementById('pred').textContent = pred;
+
+        // select 태그에서 구를 선택할 때마다 해당 구_manager.html로 이동
+        document.getElementById('subscription').onchange = function() {
+            const value = this.value;
+            switch (value) {
+                case 'BukGu':
+                    window.location.href = 'BukGu_manager.html';
+                    break;
+                case 'DalseongGun':
+                    window.location.href = 'DalseongGun_manager.html';
+                    break;
+                case 'DalsuGu':
+                    window.location.href = 'DalsuGu_manager.html';
+                    break;
+                case 'DongGu':
+                    window.location.href = 'DongGu_manager.html';
+                    break;
+                case 'JungGu':
+                    window.location.href = 'JungGu_manager.html';
+                    break;
+                case 'NamGu':
+                    window.location.href = 'NamGu_manager.html';
+                    break;
+                case 'SeoGu':
+                    window.location.href = 'SeoGu_manager.html';
+                    break;
+                case 'SuseongGu':
+                    window.location.href = 'SuseongGu_manager.html';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -8,8 +8,94 @@
 </head>
 <body>
     <h1>관리자 페이지</h1>
-    <p><h2>입력하신 민원 내용</h2>{{ text }}</p><hr>
-    <p><h2>예상 부서</h2>{{ category }}</p><hr>
-    <p><h2>예측 확률</h2>{{pred}}</p>
+    <select id="subscription_page">
+        <option value="BukGu" selected>BukGu</option>
+        <option value="DalseongGun">DalseongGun</option>
+        <option value="DalsuGu">DalsuGu</option>
+        <option value="DongGu">DongGu</option>
+        <option value="JungGu">JungGu</option>
+        <option value="NamGu">NamGu</option>
+        <option value="SeoGu">SeoGu</option>
+        <option value="Suseonggu">SuseongGu</option>
+    </select>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10">
+                <div class="rounded">
+                    <div class="table-responsive table-borderless">
+                        <table class="table">
+                            <thead>
+                                <tr>  
+                                    <th class="text-center">No.</th>
+                                    <th>민원 내용</th>
+                                    <th>예상 부서</th>
+                                    <th>예측 확률</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+                                <tr class="cell-1" data-toggle="collapse" data-target="#demo">
+                                    <td id = "text"></td>
+                                    <td id = "category"></td>
+                                    <td id = "pred"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 로컬 스토리지에서 데이터 가져오기
+        const data_list = localStorage.getItem('storedData');
+
+        // data_list의 값이 있을 때
+        if (data_list !== null) {
+            // 데이터를 JSON형식으로 파싱해서 dataList로 선언
+            const dataList = JSON.parse(data_list);
+    
+            // subscription_page에서 선택한 구를 가져와서 변수로 만들고
+            const subscriptionPage = document.getElementById("subscription_page").value;
+            // dataList에서 subscriptionPage와 일치하는 값을 찾아서 filteredDataList에 저장
+            const filteredDataList = dataList.filter(data => data.subscription === subscriptionPage);
+    
+            // 데이터 테이블에 추가
+            const tableBody = document.querySelector('.table-body');
+            tableBody.innerHTML = ''; // 테이블 초기화
+            filteredDataList.forEach((data, index) => {
+                const row = `
+                    <tr class="cell-1" data-toggle="collapse" data-target="#demo">
+                        <td class="text-center">${index + 1}</td>
+                        <td>${data.text}</td>
+                        <td>${data.category}</td>
+                        <td>${data.pred}</td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        } else {
+            console.log("No stored data found.");
+        }
+    
+        // subscription 페이지 변경 시 데이터 업데이트
+        document.getElementById("subscription_page").addEventListener("change", function() {
+            const dataList = JSON.parse(localStorage.getItem('storedData'));
+            const subscriptionPage = this.value;
+            const filteredDataList = dataList.filter(data => data.subscription === subscriptionPage);
+            const tableBody = document.querySelector('.table-body');
+            tableBody.innerHTML = ''; // 테이블 초기화
+            filteredDataList.forEach((data, index) => {
+                const row = `
+                    <tr class="cell-1" data-toggle="collapse" data-target="#demo">
+                        <td class="text-center">${index + 1}</td>
+                        <td>${data.text}</td>
+                        <td>${data.category}</td>
+                        <td>${data.pred}</td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        });
+    </script>
 </body>
 </html> 

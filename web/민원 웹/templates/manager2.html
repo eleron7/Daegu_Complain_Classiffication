@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIVLE</title>
+</head>
+<body>
+    <h1>관리자 페이지</h1>
+    <select id="subscription_page">
+        <option value="BukGu" selected>BukGu</option>
+        <option value="DalseongGun">DalseongGun</option>
+        <option value="DalsuGu">DalsuGu</option>
+        <option value="DongGu">DongGu</option>
+        <option value="JungGu">JungGu</option>
+        <option value="NamGu">NamGu</option>
+        <option value="SeoGu">SeoGu</option>
+        <option value="Suseonggu">SuseongGu</option>
+    </select>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10">
+                <div class="rounded">
+                    <div class="table-responsive table-borderless">
+                        <table class="table">
+                            <thead>
+                                <tr>  
+                                    <th class="text-center">S. No.</th>
+                                    <th>민원 내용</th>
+                                    <th>예상 부서</th>
+                                    <th>예측 확률</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+                                <tr class="cell-1" data-toggle="collapse" data-target="#demo">
+                                    <td class="text-center">1</td>
+                                    <td id = "text"></td>
+                                    <td id = "category"></td>
+                                    <td id = "pred"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 로컬 스토리지에서 데이터 가져오기
+        const data_list = localStorage.getItem('storedData');
+    </script>
+</body>
+</html> 

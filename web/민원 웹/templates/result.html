@@ -8,46 +8,46 @@
     <link rel="stylesheet" href="../static/css/result.css">
 </head>
 <body>
-<main>
-    <section class="wrap">
-        <h1>민원이 성공적으로 접수되었습니다 📝</h1><hr>
-        <form action="/predict/manager" method="POST">
-            <p><h2>예상 처리 부서</h2></p>
-            <p>{{ category }}</p>
+    <main>
+        <section class="wrap">
+            <h1>민원이 성공적으로 접수되었습니다 📝</h1><hr>
+            <form action="/predict/manager" method="POST">
+                <p><h2>예상 처리 부서</h2></p>
+                <p>{{ category }}</p>
 
-            <input type="hidden" id="text" name="text" value="{{ text }}">
-            <input type="hidden" id="category" name="category" value="{{ category }}">
-            <input type="hidden" id="pred" name="pred" value="{{ pred }}">
-            <input type="hidden" id="subscription" name="subscription" value="{{ subscription }}">
-            <button type="submit">Manager 페이지로 넘어가기</button>
-        </form>
-    </section>
-</main>
-    <script>
-        // form 데이터를 가져옴
-        const text = document.getElementById('text').value;
-        const category = document.getElementById('category').value;
-        const pred = document.getElementById('pred').value;
-        const subscription = document.getElementById('subscription').value;
+                <input type="hidden" id="text" name="text" value="{{ text }}">
+                <input type="hidden" id="category" name="category" value="{{ category }}">
+                <input type="hidden" id="pred" name="pred" value="{{ pred }}">
+                <input type="hidden" id="subscription" name="subscription" value="{{ subscription }}">
+                <button type="submit">Manager 페이지로 넘어가기</button>
+            </form>
+        </section>
 
-        // 이전에 저장된 데이터 가져옴
-        let storedData = JSON.parse(localStorage.getItem('storedData')) || [];
+        <script>
+            //DOMContentLoaded 써서 HTML구조 다 로드 된 이후에 <script>태그 실행
+                window.addEventListener('DOMContentLoaded', () => {
+                // form 데이터를 가져옴
+                const text = document.getElementById('text').value;
+                const category = document.getElementById('category').value;
+                const pred = document.getElementById('pred').value;
+                const subscription = document.getElementById('subscription').value;
 
-        // form 데이터를 객체 형태로 저장하고 로컬스토리지에 저장
-        let data = {
-            text: text,
-            category: category,
-            pred: pred,
-            subscription: subscription
-        };
+                // 이전에 저장된 데이터 가져옴
+                let storedData = JSON.parse(localStorage.getItem('storedData')) || [];
 
-        storedData.push(data);
-        localStorage.setItem('storedData', JSON.stringify(storedData));
-        
-        // 카운터 값을 증가시키기
-        let counter = parseInt(document.getElementById('counter').value);
-        counter += 1;
-        document.getElementById('counter').value = counter;
-    </script>
+                // form 데이터를 객체 형태로 저장하고 로컬스토리지에 저장
+                let data = {
+                    text: text,
+                    category: category,
+                    pred: pred,
+                    subscription: subscription
+                };
+
+                storedData.push(data);
+                localStorage.setItem('storedData', JSON.stringify(storedData));
+                
+        });
+        </script>
+    </main>
 </body>
 </html>

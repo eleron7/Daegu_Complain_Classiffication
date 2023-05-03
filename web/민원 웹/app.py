@@ -100,7 +100,7 @@ def predict():
     pred = model.predict_proba(sentence_token_vc)[0].max()
     
     # 결과 result.html 페이지로 보내기
-    return render_template('result.html', category=category, text=text, pred=pred)
+    return render_template('result.html', category=category, text=text, pred=pred, subscription=subscription)
 
 
 @app.route('/predict/manager', methods=['GET', 'POST'])
@@ -109,7 +109,12 @@ def manager():
         text = request.form['text']
         category = request.form['category']
         pred = request.form['pred']
-        return render_template('manager.html', text=text, category=category, pred=pred)
+        subscription=subscription = request.form['subscription']
+        return render_template('manager.html', text=text, category=category, pred=pred, subscription=subscription)
+
+@app.route('/predict/hidden/manager')
+def hiddenManager():
+    return render_template('manager.html')
 
 
 # 앱 실행

@@ -29,14 +29,12 @@
                                     <th class="text-center">No.</th>
                                     <th>민원 내용</th>
                                     <th>예상 부서</th>
-                                    <th>예측 확률</th>
                                 </tr>
                             </thead>
                             <tbody class="table-body">
                                 <tr class="cell-1" data-toggle="collapse" data-target="#demo">
                                     <td id = "text"></td>
                                     <td id = "category"></td>
-                                    <td id = "pred"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -68,7 +66,6 @@
                         <td class="text-center">${index + 1}</td>
                         <td>${data.text}</td>
                         <td>${data.category}</td>
-                        <td>${data.pred}</td>
                     </tr>
                 `;
                 tableBody.innerHTML += row;
@@ -90,7 +87,6 @@
                         <td class="text-center">${index + 1}</td>
                         <td>${data.text}</td>
                         <td>${data.category}</td>
-                        <td>${data.pred}</td>
                     </tr>
                 `;
                 tableBody.innerHTML += row;

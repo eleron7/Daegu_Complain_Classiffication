@@ -98,6 +98,7 @@ def predict():
     
     # 예측 확률
     pred = model.predict_proba(sentence_token_vc)[0].max()
+    # pred = model.predict_proba(sentence_token_vc)[0]
     
     # 결과 result.html 페이지로 보내기
     return render_template('result.html', category=category, text=text, pred=pred, subscription=subscription)

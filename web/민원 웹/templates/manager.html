@@ -4,47 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIVLE</title>
+    <title>관리자 페이지</title>
+    <link rel="stylesheet" href="../static/css/manager.css">
 </head>
 <body>
-    <h1>관리자 페이지</h1>
+    <main calss="contents">
+    <h1>관리자 페이지 💻</h1>
     <select id="subscription_page">
-        <option value="BukGu" selected>BukGu</option>
-        <option value="DalseongGun">DalseongGun</option>
-        <option value="DalsuGu">DalsuGu</option>
-        <option value="DongGu">DongGu</option>
-        <option value="JungGu">JungGu</option>
-        <option value="NamGu">NamGu</option>
-        <option value="SeoGu">SeoGu</option>
-        <option value="Suseonggu">SuseongGu</option>
+        <option value="BukGu" selected>북구</option>
+        <option value="DalseongGun">달성군</option>
+        <option value="DalsuGu">달서구</option>
+        <option value="DongGu">동구</option>
+        <option value="JungGu">중구</option>
+        <option value="NamGu">남구</option>
+        <option value="SeoGu">서구</option>
+        <option value="Suseonggu">수성구</option>
     </select>
-    <div class="container mt-5">
-        <div class="d-flex justify-content-center row">
-            <div class="col-md-10">
-                <div class="rounded">
-                    <div class="table-responsive table-borderless">
-                        <table class="table">
-                            <thead>
-                                <tr>  
-                                    <th class="text-center">No.</th>
-                                    <th>민원 내용</th>
-                                    <th>예상 부서</th>
-                                    <th>예측 확률</th>
-                                </tr>
-                            </thead>
-                            <tbody class="table-body">
-                                <tr class="cell-1" data-toggle="collapse" data-target="#demo">
-                                    <td id = "text"></td>
-                                    <td id = "category"></td>
-                                    <td id = "pred"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <section class="wrap">
+        <div class="contents-wrap table-wrap">
+                <table class="table">
+                    <thead>
+                        <tr>  
+                            <th class="th_num" width='30px'>No.</th>
+                            <th class="th_text">민원 내용</th>
+                            <th class="th_sub" width='150px'>처리 부서</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr>
+                            <td class="td_num" id = "num"></td>
+                            <td class="td_text" id = "text"></td>
+                            <td class="td_sub" id = "category" width='150px'></td>
+                        </tr>
+                    </tbody>
+                </table>
         </div>
-    </div>
+    </section>          
     <script>
         // 로컬 스토리지에서 데이터 가져오기
         const data_list = localStorage.getItem('storedData');
@@ -64,11 +59,10 @@
             tableBody.innerHTML = ''; // 테이블 초기화
             filteredDataList.forEach((data, index) => {
                 const row = `
-                    <tr class="cell-1" data-toggle="collapse" data-target="#demo">
-                        <td class="text-center">${index + 1}</td>
+                    <tr>
+                        <td>${index + 1}</td>
                         <td>${data.text}</td>
                         <td>${data.category}</td>
-                        <td>${data.pred}</td>
                     </tr>
                 `;
                 tableBody.innerHTML += row;
@@ -86,16 +80,18 @@
             tableBody.innerHTML = ''; // 테이블 초기화
             filteredDataList.forEach((data, index) => {
                 const row = `
-                    <tr class="cell-1" data-toggle="collapse" data-target="#demo">
-                        <td class="text-center">${index + 1}</td>
+                    <tr>
+                        <td>${index + 1}</td>
                         <td>${data.text}</td>
                         <td>${data.category}</td>
-                        <td>${data.pred}</td>
                     </tr>
                 `;
                 tableBody.innerHTML += row;
             });
         });
+
+
     </script>
+</main>
 </body>
 </html> 

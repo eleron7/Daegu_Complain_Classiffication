@@ -4,9 +4,9 @@
 
 <img src="https://img.shields.io/badge/scikitlearn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white"><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=Tensorflow&logoColor=white"><img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=Keras&logoColor=white"><img src="https://img.shields.io/badge/pytorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
 
-# 민원 내용을 입력하면 해당 민원을 자동으로 부서분류를 해주는 서비스
+## 민원 내용을 입력하면 해당 민원을 자동으로 부서분류를 해주는 서비스
 
-# 회의록
+### 회의록
 https://www.notion.so/b5c03d4474544d2588ef0012033cb9a7?v=e89cdbe2f9204f0b98d737345e070bef
 
 ## 데이터 수집

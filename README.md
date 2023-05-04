@@ -10,7 +10,8 @@
 https://www.notion.so/b5c03d4474544d2588ef0012033cb9a7?v=e89cdbe2f9204f0b98d737345e070bef
 
 ## 데이터 수집
-  - 크롤링
+  - <a herf="http://dongjak.eminwon.seoul.kr/emwp/gov/mogaha/ntis/web/emwp/cmmpotal/action/EmwpMainMgtAction.do">새올 전자 민원 창구</a> 
+  셀레니움을 사용하여 대구광역시 모든 자치구들의 민원 데이터를 수집하였다.
 
 ## 전처리
 

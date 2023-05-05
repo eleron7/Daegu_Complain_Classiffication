@@ -25,6 +25,8 @@ https://www.notion.so/b5c03d4474544d2588ef0012033cb9a7?v=e89cdbe2f9204f0b98d7373
 
 ### 웹서비스 구현
 - 모델의 작동 방식, 분류 성능 확인
+
+
 ![북구_result_1](https://user-images.githubusercontent.com/80496813/236376529-f4f5d139-1f6d-4a27-9a89-d828d00708c1.png)
 ![북구_result_2](https://user-images.githubusercontent.com/80496813/236376978-2fed0ac3-636f-42f0-bb71-726c5cfe5133.png)![북구_접수 1](https://user-images.githubusercontent.com/80496813/236376991-50cefb77-cc45-41e6-8dac-3301af2b0f09.png)
 ![북구_접수2](https://user-images.githubusercontent.com/80496813/236377000-4970d349-38e8-4420-afeb-ddcfd1b9f34a.png)

@@ -104,19 +104,9 @@ def predict():
     return render_template('result.html', category=category, text=text, pred=pred, subscription=subscription)
 
 
-@app.route('/predict/manager', methods=['GET', 'POST'])
+@app.route('/predict/manager')
 def manager():
-    if request.method == 'POST':
-        text = request.form['text']
-        category = request.form['category']
-        pred = request.form['pred']
-        subscription=subscription = request.form['subscription']
-        return render_template('manager.html', text=text, category=category, pred=pred, subscription=subscription)
-
-@app.route('/predict/hidden/manager')
-def hiddenManager():
     return render_template('manager.html')
-
 
 # 앱 실행
 if __name__ == '__main__':

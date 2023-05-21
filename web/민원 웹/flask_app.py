@@ -17,6 +17,7 @@ SeoGu_model = joblib.load('SeoGu_model.joblib')
 Suseonggu_model = joblib.load('Suseonggu_model.joblib')
 DongGu_model = joblib.load('DongGu_model.joblib')
 
+# w2v 모델 로드
 wv_model = joblib.load('new_wv_model.joblib')
 
 # 라우트
